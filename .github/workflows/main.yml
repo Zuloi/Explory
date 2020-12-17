@@ -15,8 +15,8 @@ jobs:
     - name: Install dependencies
       working-directory: ./explory
       run:  | 
-        npm install -f
         npm install -g @quasar/cli -f
+        npm install -f
         quasar build -m electron -f
           
     - name: Artifact upload
