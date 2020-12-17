@@ -15,7 +15,7 @@ jobs:
     - name: Install dependencies
       working-directory: ./explory
       run:  | 
-        npm install
+        npm install -f
         npm install -g @quasar/cli -f
         quasar build -m electron -f
           
