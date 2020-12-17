@@ -117,7 +117,7 @@ cfg.module.rules.push({
       manifest: {
         name: `explory`,
         short_name: `explory`,
-        description: `Explorer sort/system application`,
+        description: `explorer`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

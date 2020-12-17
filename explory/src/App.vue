@@ -1,6 +1,7 @@
 <template>
   <div id="q-app">
     <router-view />
+    <div>hallo</div>
   </div>
 </template>
 <script>
