@@ -12,8 +12,6 @@ jobs:
   build:
 
     runs-on: windows-latest
-    strategy:
-
 
     steps:
     - uses: actions/checkout@v2
