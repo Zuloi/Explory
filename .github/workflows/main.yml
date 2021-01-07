@@ -1,26 +1,46 @@
-name: main
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 
+name: main
 on:
   push:
-    branches: [main]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build-ci:
-    runs-on: windows-latest
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9]
 
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@master
-
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
     - name: Install dependencies
-      working-directory: ./explory
-      run:  | 
-        npm install -g @quasar/cli -f
-        npm install -f
-        quasar build -m electron -f
-          
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install pyqt5-tools
+        python -m pip install pyinstaller
+        python -m pip install pylint
+        python -m pip install mypy
+
+    - name: Lint with pylint
+      run: pylint main.py
+
+    - name: mypy
+      run: mypy main.py
+
+    - name: make exe
+      run: pyinstaller main.py
+
     - name: Artifact upload
       uses: actions/upload-artifact@v2
       with:
         name: explory
-        path: explory/dist/electron/explory-win32-x64/
+        path: explory/dist/explory/
