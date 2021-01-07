@@ -34,7 +34,7 @@ jobs:
       run: mypy explory/main.py
 
     - name: make exe
-      run: pyinstaller --onefile explory/main.py
+      run: pyinstaller --onefile --console explory/main.py
 
     - name: Artifact upload
       uses: actions/upload-artifact@v2
