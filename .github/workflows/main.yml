@@ -28,13 +28,13 @@ jobs:
         python -m pip install mypy
 
     - name: Lint with pylint
-      run: pylint explory/main.py --exit-zero
+      run: pylint explory/explory.py --exit-zero
 
     - name: mypy
-      run: mypy explory/main.py
+      run: mypy explory/explory.py
 
     - name: make exe
-      run: pyinstaller --onefile --console explory/main.py
+      run: pyinstaller --onefile --console explory/explory.py
 
     - name: Artifact upload
       uses: actions/upload-artifact@v2
