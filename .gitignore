@@ -163,3 +163,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 
+# temp folder
+.temp/
+
