@@ -13,10 +13,16 @@ from explory.errors.errors import (Window_Error, Backup_Error, Make_Directories_
 
 
 class MyWindow(QMainWindow):
-    source_directory = os.path.expanduser("~/Desktop/Sortierung") #Path where your files are at the moment 
-    backup_directory =  os.path.expanduser("~/Desktop/Backup") #Path where your files will be backuped
+    """source_directory = os.path.expanduser("~/Desktop/sortierung") #Path where your files are at the moment 
+    backup_directory =  os.path.expanduser("~/Desktop/backup") #Path where your files will be backuped
     base_target_directory =  os.path.expanduser("~/Desktop/sortiert/") #Basepath you want to move your files to
     target_directories = [ os.path.expanduser("~/Desktop/sortiert/txt"),  os.path.expanduser("~/Desktop/sortiert/docx")] #Path you want to move your files to 
+    file_types = ["*.txt", "*.docx"]"""
+
+    source_directory = "C:/Users/vmadmin/Desktop/Sortierung" #Path where your files are at the moment 
+    backup_directory = "C:/Users/vmadmin/Desktop/Backup" #Path where your files will be backuped
+    base_target_directory = "C:/Users/vmadmin/Desktop/sortiert/" #Basepath you want to move your files to
+    target_directories = ["C:/Users/vmadmin/Desktop/sortiert/txt", "C:/Users/vmadmin/Desktop/sortiert/docx"] #Path you want to move your files to 
     file_types = ["*.txt", "*.docx"]
     
 
@@ -66,7 +72,7 @@ def setup():
         os.makedirs("./Data/logfile")
 
 def logfile():
-    logfile =  os.path.expanduser("~/Desktop/logfile/explory.log")
+    logfile = "C:/Users/vmadmin/Desktop/explory.log" #os.path.expanduser("~/Desktop/logfile/explory.log")
     if os.path.exists(logfile):
         os.remove(logfile)
     handler = logging.handlers.WatchedFileHandler(
