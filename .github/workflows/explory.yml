@@ -33,8 +33,8 @@ jobs:
     - name: mypy
       run: mypy explory/explory.py
 
-    - name: unittests
-      run: python -m unittest explory.tests.tests
+    #- name: unittests
+    #  run: python -m unittest explory.tests.tests
 
     - name: make exe
       run: pyinstaller --onefile --console explory/explory.py
