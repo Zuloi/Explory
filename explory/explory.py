@@ -161,7 +161,7 @@ import logging.handlers
 from PyQt5 import QtWidgets                             #type: ignore   # pylint: disable=no-name-in-module
 from PyQt5.QtWidgets import QApplication, QMainWindow   #type: ignore   # pylint: disable=no-name-in-module
 
-from errors.errors import (Window_Error, Backup_Error, Make_Directories_Error, Sort_Error, Unmove_Files_Error, Delete_Backup_Error, Delete_Sort_Error) #type: ignore # pylint: disable=no-name-in-module
+from explory.errors.errors import (Window_Error, Backup_Error, Make_Directories_Error, Sort_Error, Unmove_Files_Error, Delete_Backup_Error, Delete_Sort_Error) #type: ignore # pylint: disable=no-name-in-module
 
 
 class MyWindow(QMainWindow):
