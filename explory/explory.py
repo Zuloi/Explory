@@ -63,8 +63,8 @@ def main():
 def setup():
     if not os.path.exists("./data/sortierung"):
         os.makedirs("./data/sortierung")
-    if not os.path.exists("./data/logfile/explory.log"):
-        os.makedirs("./data/logfile/explory.log")
+    if not os.path.exists("./data/logfile"):
+        os.makedirs("./data/logfile")
 
 def logfile():
     logfile = "./Data/logfile/explory.log"
