@@ -13,10 +13,11 @@ from explory.errors.errors import (Window_Error, Backup_Error, Make_Directories_
 
 
 class MyWindow(QMainWindow):
-    source_directory = "Desktop/Sortierung" #Path where your files are at the moment 
-    backup_directory = "Desktop/Backup" #Path where your files will be backuped
-    base_target_directory = "Desktop/sortiert/" #Basepath you want to move your files to
-    target_directories = ["Desktop/sortiert/txt", "Desktop/sortiert/docx"] #Path you want to move your files to 
+    current_directory = os.getcwd()
+    source_directory = os.path.join(current_directory, r'data/sortierung') #Path where your files are at the moment 
+    backup_directory = os.path.join(current_directory, r'data/backup') #Path where your files will be backuped
+    base_target_directory = os.path.join(current_directory, r'data/sortiert') #Basepath you want to move your files to
+    target_directories = [os.path.join(current_directory, r'data/sortiert/txt'), os.path.join(current_directory, r'data/sortiert/docx')] #Path you want to move your files to 
     file_types = ["*.txt", "*.docx"]
     
 
@@ -60,8 +61,10 @@ def main():
     window()
 
 def logfile():
+    current_directory = os.getcwd()
+    logfile_directory = os.path.join(current_directory, r'LOGFILE/explory.log')
     handler = logging.handlers.WatchedFileHandler(
-    os.environ.get("LOGFILE", "Desktop/explory.log"))
+    os.environ.get("LOGFILE", logfile_directory))
     formatter = logging.Formatter(logging.BASIC_FORMAT)
     handler.setFormatter(formatter)
     root = logging.getLogger()
