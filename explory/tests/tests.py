@@ -16,13 +16,6 @@ class Tests(unittest.TestCase):
         target_directories = ["temp/sortiert/txt", "temp/sortiert/docx"]
         make_directories(target_directories)
         self.assertTrue(os.path.exists("temp/sortiert/txt") and os.path.exists("temp/sortiert/docx"))
-      
-    def test_move_files(self):
-        source_directory = "temp/sortierung"
-        target_directories = ["temp/sortiert/txt", "temp/sortiert/docx"]
-        file_types = ["*.txt", "*.docx"]
-        move_files(source_directory, target_directories, file_types)
-        self.assertTrue(os.path.exists("temp/sortiert/txt/hallo.txt") and os.path.exists("temp/sortiert/docx/hallo.docx"))
         
     def test_backup(self):
         backup_directory = "temp/backup"
