@@ -13,10 +13,10 @@ from explory.errors.errors import (Window_Error, Backup_Error, Make_Directories_
 
 
 class MyWindow(QMainWindow):
-    source_directory = "./Data/Sortierung" #Path where your files are at the moment 
-    backup_directory = "./Data/Backup" #Path where your files will be backuped
-    base_target_directory = "./Data/sortiert/" #Basepath you want to move your files to
-    target_directories = ["./Data/sortiert/txt", "./Data/sortiert/docx"] #Path you want to move your files to 
+    source_directory = "Desktop/Sortierung" #Path where your files are at the moment 
+    backup_directory = "Desktop/Backup" #Path where your files will be backuped
+    base_target_directory = "Desktop/sortiert/" #Basepath you want to move your files to
+    target_directories = ["Desktop/sortiert/txt", "./Data/sortiert/docx"] #Path you want to move your files to 
     file_types = ["*.txt", "*.docx"]
     
 
@@ -56,7 +56,6 @@ class MyWindow(QMainWindow):
         self.button.clicked.connect(lambda: undo_sort(self.source_directory, self.backup_directory, self.base_target_directory))
 
 def main():
-    setup()
     logfile()
     window()
 
@@ -67,7 +66,7 @@ def setup():
         os.makedirs("./Data/logfile")
 
 def logfile():
-    logfile = "./Data/logfile/explory.log"
+    logfile = "Desktop/logfile/explory.log"
     if os.path.exists(logfile):
         os.remove(logfile)
     handler = logging.handlers.WatchedFileHandler(
