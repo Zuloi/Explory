@@ -13,10 +13,10 @@ from explory.errors.errors import (Window_Error, Backup_Error, Make_Directories_
 
 
 class MyWindow(QMainWindow):
-    source_directory = "C:/Users/vmadmin/Desktop/Sortierung" #Path where your files are at the moment 
-    backup_directory = "C:/Users/vmadmin/Desktop/Backup" #Path where your files will be backuped
-    base_target_directory = "C:/Users/vmadmin/Desktop/sortiert/" #Basepath you want to move your files to
-    target_directories = ["C:/Users/vmadmin/Desktop/sortiert/txt", "C:/Users/vmadmin/Desktop/sortiert/docx"] #Path you want to move your files to 
+    source_directory = "./Data/Sortierung" #Path where your files are at the moment 
+    backup_directory = "./Data/Backup" #Path where your files will be backuped
+    base_target_directory = "./Data/sortiert/" #Basepath you want to move your files to
+    target_directories = ["./Data/sortiert/txt", "./Data/sortiert/docx"] #Path you want to move your files to 
     file_types = ["*.txt", "*.docx"]
     
 
@@ -61,7 +61,7 @@ def main():
 
 def logfile():
     handler = logging.handlers.WatchedFileHandler(
-    os.environ.get("LOGFILE", "C:/Users/vmadmin/Desktop/explory.log"))
+    os.environ.get("LOGFILE", "./Data/LOGFILE/explory.log"))
     formatter = logging.Formatter(logging.BASIC_FORMAT)
     handler.setFormatter(formatter)
     root = logging.getLogger()
@@ -75,7 +75,7 @@ def window():
         win.show()
         sys.exit(app.exec_())
     except:
-        logging.error("window can't be built")
+        logging.info("window was closed")
         raise Window_Error("window can't be built")
 
 def sort(source_directory, backup_directory, target_directories, file_types):
