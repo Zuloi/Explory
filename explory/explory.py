@@ -60,8 +60,11 @@ def main():
     window()
 
 def logfile():
+    logfile = "./Data/logfile/explory.log"
+    if os.path.exists(logfile):
+        os.remove(logfile)
     handler = logging.handlers.WatchedFileHandler(
-    os.environ.get("LOGFILE", "./Data/LOGFILE/explory.log"))
+    os.environ.get("LOGFILE", logfile))
     formatter = logging.Formatter(logging.BASIC_FORMAT)
     handler.setFormatter(formatter)
     root = logging.getLogger()
