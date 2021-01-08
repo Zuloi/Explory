@@ -4,7 +4,7 @@ import shutil, tempfile
 import os
 import unittest
 import pathlib
-from explory import (make_directories, move_files, backup)
+from explory.explory import (make_directories, move_files, backup)
 
 class Tests(unittest.TestCase):
     def setUp(self):
