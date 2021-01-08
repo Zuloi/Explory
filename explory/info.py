@@ -1,6 +1,6 @@
 # region: venv
 """
-    activate: & c:/Users/vmadmin/Desktop/Python_exe1/venv/Scripts/Activate.ps1
+    venv\Scripts\activate
 """
 # endregion:
 
@@ -13,9 +13,9 @@
 
 # region: mypy
 """
-    Install: python -m pip install mypy
-    Start mypy:#*   mypy main.py
-    ignore a line:#*    #type: ignore
+    Install: python                 -m pip install mypy
+    Start mypy:#*                   mypy explory.py
+    ignore a line:#*                #type: ignore
     saying what a function return: -> List[Version]     List example
                                    -> bool              Bool example
     saying what it is:              : List[Version]     List example
@@ -26,14 +26,14 @@
 # region: pylint
 """
     Install: python -m pip install pylint
-    Start:   main.py
+    Start:   explory.py
 """
 # endregion:
 
 # region: pyinstaller
 """
     install: python -m pip install pyinstaller
-    pyinstaller main.py
+    pyinstaller --onefile --console explory.py
 """
 # endregion:
 
