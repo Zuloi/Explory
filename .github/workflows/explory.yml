@@ -37,7 +37,7 @@ jobs:
       run: python -m unittest explory.tests.tests
 
     - name: make exe
-      run: pyinstaller --onefile --log-level --console explory/explory.py
+      run: pyinstaller --onefile ---debug=all --console explory/explory.py
 
     - name: Artifact upload
       uses: actions/upload-artifact@v2
