@@ -26,14 +26,14 @@
 # region: pylint
 """
     Install: python -m pip install pylint
-    Start:   explory.py
+    Start:   pylint explory.py
 """
 # endregion:
 
 # region: pyinstaller
 """
     install: python -m pip install pyinstaller
-    pyinstaller --onefile --console explory.py
+    pyinstaller --onefile --console explory/explory.py
 """
 # endregion:
 
