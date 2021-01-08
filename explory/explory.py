@@ -9,15 +9,14 @@ import logging.handlers
 from PyQt5 import QtWidgets                             #type: ignore   # pylint: disable=no-name-in-module
 from PyQt5.QtWidgets import QApplication, QMainWindow   #type: ignore   # pylint: disable=no-name-in-module
 
-from explory.errors.errors import (Window_Error, Backup_Error, Make_Directories_Error, Sort_Error, Unmove_Files_Error, Delete_Backup_Error, Delete_Sort_Error) #type: ignore # pylint: disable=no-name-in-module
+from errors.errors import (Window_Error, Backup_Error, Make_Directories_Error, Sort_Error, Unmove_Files_Error, Delete_Backup_Error, Delete_Sort_Error) #type: ignore # pylint: disable=no-name-in-module
 
 
 class MyWindow(QMainWindow):
-    current_directory = os.getcwd()
-    source_directory = os.path.join(current_directory, r'data/sortierung') #Path where your files are at the moment 
-    backup_directory = os.path.join(current_directory, r'data/backup') #Path where your files will be backuped
-    base_target_directory = os.path.join(current_directory, r'data/sortiert') #Basepath you want to move your files to
-    target_directories = [os.path.join(current_directory, r'data/sortiert/txt'), os.path.join(current_directory, r'data/sortiert/docx')] #Path you want to move your files to 
+    source_directory = "C:/Users/vmadmin/Desktop/Sortierung" #Path where your files are at the moment 
+    backup_directory = "C:/Users/vmadmin/Desktop/Backup" #Path where your files will be backuped
+    base_target_directory = "C:/Users/vmadmin/Desktop/sortiert/" #Basepath you want to move your files to
+    target_directories = ["C:/Users/vmadmin/Desktop/sortiert/txt", "C:/Users/vmadmin/Desktop/sortiert/docx"] #Path you want to move your files to 
     file_types = ["*.txt", "*.docx"]
     
 
@@ -61,10 +60,8 @@ def main():
     window()
 
 def logfile():
-    current_directory = os.getcwd()
-    logfile_directory = os.path.join(current_directory, r'LOGFILE/explory.log')
     handler = logging.handlers.WatchedFileHandler(
-    os.environ.get("LOGFILE", logfile_directory))
+    os.environ.get("LOGFILE", "C:/Users/vmadmin/Desktop/explory.log"))
     formatter = logging.Formatter(logging.BASIC_FORMAT)
     handler.setFormatter(formatter)
     root = logging.getLogger()
