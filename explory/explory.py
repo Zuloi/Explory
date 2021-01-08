@@ -16,7 +16,7 @@ class MyWindow(QMainWindow):
     source_directory = os.path.expanduser("~/Desktop/Sortierung") #Path where your files are at the moment 
     backup_directory =  os.path.expanduser("~/Desktop/Backup") #Path where your files will be backuped
     base_target_directory =  os.path.expanduser("~/Desktop/sortiert/") #Basepath you want to move your files to
-    target_directories = [ os.path.expanduser("~/Desktop/sortiert/txt"),  os.path.expanduser("~/./Data/sortiert/docx")] #Path you want to move your files to 
+    target_directories = [ os.path.expanduser("~/Desktop/sortiert/txt"),  os.path.expanduser("~/Desktop/sortiert/docx")] #Path you want to move your files to 
     file_types = ["*.txt", "*.docx"]
     
 
