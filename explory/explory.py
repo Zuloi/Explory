@@ -56,8 +56,15 @@ class MyWindow(QMainWindow):
         self.button.clicked.connect(lambda: undo_sort(self.source_directory, self.backup_directory, self.base_target_directory))
 
 def main():
+    setup()
     logfile()
     window()
+
+def setup():
+    if not os.path.exists("./data/sortierung"):
+        os.makedirs("./data/sortierung")
+    if not os.path.exists("./data/logfile/explory.log"):
+        os.makedirs("./data/logfile/explory.log")
 
 def logfile():
     logfile = "./Data/logfile/explory.log"
